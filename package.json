@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My custom Winston-based Logger",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "npm run dev:lint && npm run dev:compile",
     "dev:lint": "tslint -c .tslint.js -p .",
