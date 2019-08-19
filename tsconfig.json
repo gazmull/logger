@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "incremental": true,
+    "removeComments": true,
+    "target": "es2018"
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

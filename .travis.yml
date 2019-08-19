@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - 12
+sudo: false
+install: yarn
+cache:
+  directories:
+    - node_modules

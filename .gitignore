@@ -1,0 +1,7 @@
+test
+logs
+dist
+node_modules
+package-log.json
+yarn-error.log
+*.map
