@@ -8,7 +8,7 @@
     "dev:lint": "tslint -c .tslint.js -p .",
     "dev:compile": "tsc -p .",
     "dev:watch": "tsc -p . --watch",
-    "prepublishOnly": "npm test"
+    "install": "npm run dev:compile"
   },
   "repository": {
     "type": "git",
