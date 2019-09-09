@@ -4,10 +4,10 @@ import { createLogger, format, Logger, transports } from 'winston';
 import * as RotateFile from 'winston-daily-rotate-file';
 
 export default class Winston {
-  constructor (projectName: string) {
+  constructor (projectName: string, prefix = '') {
     this.logger = createLogger({
       exitOnError: false,
-      format: this.baseFormat(),
+      format: this.baseFormat(prefix),
       transports: [
         new transports.Console(),
         new RotateFile({
@@ -29,11 +29,17 @@ export default class Winston {
 
   public logger: Logger;
 
-  protected baseFormat () {
-    const formatMessage = log =>
-      `${this.setColour('timestamp', this.time)}: [${this.setColour(log.level)}] ${log.message}`;
-    const formatError = log =>
-      `${this.setColour('timestamp', this.time)}: [${this.setColour(log.level)}] ${log.message}\n ${log.stack}\n`;
+  protected baseFormat (prefix?: string) {
+    const formatMessage = log => [
+      prefix ? `${prefix} ` : '',
+      `${this.setColour('timestamp', this.time)}: [${this.setColour(log.level)}] `,
+      log.message,
+    ].join('');
+    const formatError = log => [
+      prefix ? `${prefix} ` : '',
+      `${this.setColour('timestamp', this.time)}: [${this.setColour(log.level)}] `,
+      `${log.message}\n  ${log.stack}\n`,
+    ].join('');
     const _format = log =>
       log instanceof Error
         ? formatError(log)
