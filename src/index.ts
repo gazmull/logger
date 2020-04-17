@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { inspect } from 'util';
 import { createLogger, format, Logger, transports } from 'winston';
-import * as RotateFile from 'winston-daily-rotate-file';
+import RotateFile from 'winston-daily-rotate-file';
 
 export default class Winston {
   constructor (projectName: string, prefix = '') {
