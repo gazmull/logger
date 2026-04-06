@@ -5,3 +5,5 @@ node_modules
 package-log.json
 yarn-error.log
 *.map
+.yarn
+.yarnrc.yml

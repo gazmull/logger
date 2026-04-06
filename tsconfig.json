@@ -8,7 +8,8 @@
     "outDir": "dist",
     "incremental": true,
     "removeComments": true,
-    "target": "es2018"
+    "target": "es2018",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts"
